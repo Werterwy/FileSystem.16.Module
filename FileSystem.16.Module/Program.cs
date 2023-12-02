@@ -70,6 +70,10 @@ namespace FileSystem._16.Module
 
         }
 
+        /// <summary>
+        /// Просмотр Содержимого Директории:- Приложение должно запрашивать у пользователя путь 
+        /// к директории и отображать список всех файлов и поддиректорий в этой директории.
+        /// </summary>
         static void ShowDirectoryContents()
         {
             Console.Write("Введите путь к директории: ");
@@ -79,13 +83,13 @@ namespace FileSystem._16.Module
             {
                 string[] files = Directory.GetFiles(path);
                 string[] directories = Directory.GetDirectories(path);
-
+                Console.WriteLine("");
                 Console.WriteLine("Файлы:");
                 foreach (string file in files)
                 {
                     Console.WriteLine(Path.GetFileName(file));
                 }
-
+                Console.WriteLine("");
                 Console.WriteLine("Директории:");
                 foreach (string directory in directories)
                 {
@@ -99,6 +103,10 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        ///  Создание Файла/Директории: - Пользователь может создать новый файл 
+        ///  или директорию в указанном месте.
+        /// </summary>
         static void CreateFileOrDirectory()
         {
             Console.Write("Введите путь к файлу/директории: ");
@@ -132,6 +140,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Удаление Файла/Директории: - Предоставить возможность удаления файла или директории по указанному пути.
+        /// </summary>
         static void DeleteFileOrDirectory()
         {
             Console.Write("Введите путь к файлу/директории для удаления: ");
@@ -162,6 +173,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Копирование Файлов и Директорий: - Реализовать функции для копирования файлов и директорий.
+        /// </summary>
         static void CopyFileOrDirectory()
         {
             Console.Write("Введите путь к файлу/директории для копирования: ");
@@ -195,6 +209,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Перемещение Файлов и Директорий: - Реализовать функции для перемещения файлов и директорий.
+        /// </summary>
         static void MoveFileOrDirectory()
         {
             Console.Write("Введите путь к файлу/директории для перемещения: ");
@@ -228,6 +245,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Чтение в Файл: - Предоставить возможность чтения текста.
+        /// </summary>
         static void ReadFromFile()
         {
             Console.Write("Введите путь к файлу для чтения: ");
@@ -252,6 +272,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Запись в Файл: - Предоставить возможность записи текста в файл.
+        /// </summary>
         static void WriteToFile()
         {
             Console.Write("Введите путь к файлу для записи: ");
@@ -297,6 +320,11 @@ namespace FileSystem._16.Module
                 CopyDirectory(dir, destDir);
             }
         }
+
+        /// <summary>
+        /// Логирование Действий: - Вести лог всех выполненных операций, сохраняя его в отдельный файл.
+        /// </summary>
+        /// <param name="action"></param>
         static void LogAction(string action)
         {
             try
@@ -310,6 +338,9 @@ namespace FileSystem._16.Module
             }
         }
 
+        /// <summary>
+        /// Вывод содержимого лог файла.
+        /// </summary>
         static void DisplayLog()
         {
             try
